@@ -174,7 +174,7 @@ namespace Изменение_исходного_массива
                 }
                 Console.WriteLine("в) Поменяны местами первый с последним, второй с предпоследним и т.д.: " + string.Join("; ", massiv));
             }
-            void n3 ()
+            void n3()
             { 
                 double [] massiv = new double [20];
                 Random random = new Random();
@@ -207,7 +207,7 @@ namespace Изменение_исходного_массива
                 Array.ConstrainedCopy(massiv1, 0, massiv, 2, 8);
                 Console.WriteLine("а) бла бла бла: "+string.Join ("; ", massiv));
                 //=======================================
-                
+                kipish();
                 int k; bool outk;
                 void vvodk()
                 {
@@ -224,27 +224,109 @@ namespace Изменение_исходного_массива
                             outk = false;
                     }
                 }
-                //Console.WriteLine("это к "+k);
-                vvodk();
-                
-                int s = 0; bool outs = true;string h;
-                while (outs)
+                int s; bool outs;
+                void vvods()
                 {
-                    h= Console.ReadLine();
-                    if (h.ToLower() == "повторить")
-                        vvodk();
-                    else if (!int.TryParse(h, out s))
-                        Console.Write("Ошибка! Введите s еще раз ");
-                    else if (s <= 0 || s > 15)
-                        Console.Write("s не может быть неположительным и больше длины массива (15)\nВведите s еще раз ");
-                    else if (k >= s)
-                        Console.Write($"s должно быть больше чем k ({k}), введите k еще раз или введите \"Повторить\", для того чтобы ввести k еще раз ");
-                    else
-                        outs = false;
+                    s  = 0;
+                    outs = true;
+                    string h;
+                    Console.Write("Введите s ");
+                    while (outs)
+                    {
+                        h = Console.ReadLine();
+                        if (h.ToLower() == "повторить")
+                            kipish();
+                        else if (!int.TryParse(h, out s))
+                            Console.Write("Ошибка! Введите s еще раз ");
+                        else if (s <= 0 || s > 15)
+                            Console.Write("s не может быть неположительным и больше длины массива (15)\nВведите s еще раз ");
+                        else if (k >= s)
+                            Console.Write($"s должно быть больше чем k ({k}), введите k еще раз или введите \"Повторить\", для того чтобы ввести k еще раз ");
+                        else
+                            outs = false;
+                    }
                 }
-                Console.WriteLine("k: " + k + "\ns: " + s);
+                void kipish ()
+                {
+                    vvodk();
+                    vvods();
+                }
+                double[] massiv2 = new double[s-k-1];
+                Array.ConstrainedCopy(massiv, k, massiv2, 0, s-k-1);
+                Array.Reverse(massiv2);
+                Array.ConstrainedCopy(massiv2, 0, massiv, k, s-k-1);
+                Console.WriteLine("б) бла бла бла: " + string.Join("; ", massiv));
+                //Console.WriteLine("k: " + k + "\ns: " + s);
+                //=====================================
+                //massiv[0] = -60; massiv[1] = -60; massiv[4] = 60; massiv[8] = 60;
+                int indexMin = 0, indexMax = 0;
+                if (Array.FindAll(massiv, g => g == massiv.Min()).Length != 1)
+                {
+                    var kol = new List<int>();
+                    for (int i = 0; i < massiv.Length; i++)
+                    {
+                        if (massiv[i] == massiv.Min())
+                            kol.Add(i);
+                    }
+                    Console.WriteLine("В массиве несколько минимальных элементов их индексы: " + string.Join(", ", kol));
+                    Console.Write($"Введите индекс мин элемента, который необходим ({string.Join(", ", kol)}) ");
+                    bool outindexMin = true;
+                    while (outindexMin)
+                    {
+                        if (!int.TryParse(Console.ReadLine(), out indexMin))
+                            Console.Write("Ошибка! Введите индекс мин элемента, который необходим еще раз ");
+                        else if (!kol.Contains(indexMin)) //нао отработку доделать, на ввод индексов
+                            Console.Write($"Введенное значение не соответствует ни одному из нужных индексов\nВведите индекс мин элемента, который необходим ({string.Join(", ", kol)}) ");
+                        else
+                            outindexMin = false;
+                    }
+                }
+                else
+                    indexMin = Array.FindIndex(massiv, g => g == massiv.Min());
+                if (Array.FindAll(massiv, g => g == massiv.Max()).Length != 1)
+                {
+                    var kol = new List<int>();
+                    for (int i = 0; i < massiv.Length; i++)
+                    {
+                        if (massiv[i] == massiv.Max())
+                            kol.Add(i);
+                    }
+                    Console.WriteLine("В массиве несколько максимальных элементов их индексы: " + string.Join(", ", kol));
+                    Console.Write($"Введите индекс макс элемента, который необходим ({string.Join(", ", kol)}) ");
+                    bool outindexMax = true;
+                    while (outindexMax)
+                    {
+                        if (!int.TryParse(Console.ReadLine(), out indexMax))
+                            Console.Write("Ошибка! Введите индекс макс элемента, который необходим еще раз ");
+                        else if (!kol.Contains(indexMax)) //нао отработку доделать, на ввод индексов
+                            Console.Write($"Введенное значение не соответствует ни одному из нужных индексов\nВведите индекс макс элемента, который необходим ({string.Join(", ", kol)}) ");
+                        else
+                            outindexMax = false;
+                    }
+                }
+                else
+                    indexMax = Array.FindIndex(massiv, g => g == massiv.Max());
+                //Console.WriteLine("it's min: " + indexMin + "it's max: " + indexMax);
+                if (indexMin < indexMax) //не могут быть равны т.к. элементов массива 15, а не 1
+                {
+                    double[] massiv3 = new double[indexMax-indexMin+1];
+                    Array.ConstrainedCopy(massiv, indexMin , massiv3, 0, indexMax - indexMin+1);
+                    //Console.WriteLine("Срез: " + string.Join("; ", massiv3));
+                    Array.Reverse(massiv3);
+                    Array.ConstrainedCopy(massiv3, 0, massiv, indexMin , indexMax - indexMin+1);
+                    Console.WriteLine("в) бла бла бла: " + string.Join("; ", massiv));
+                }
+                else
+                {
+                    double[] massiv3 = new double[indexMin - indexMax+1];
+                    Array.ConstrainedCopy(massiv, indexMax, massiv3, 0, indexMin-indexMax+1);
+                    //Console.WriteLine("Срез: " + string.Join("; ", massiv3));
+                    Array.Reverse(massiv3);
+                    Array.ConstrainedCopy(massiv3, 0, massiv, indexMax, indexMin-indexMax+1);
+                    Console.WriteLine("в) бла бла бла: " + string.Join("; ", massiv));
+                }
             }
-            void n5( )
+            void n5 ( )
             {
                 Console.Write("Введите кол-во элементов массива ");
                 int kolvoElenents = 0; bool outkolvoElements = true;
@@ -280,7 +362,216 @@ namespace Изменение_исходного_массива
                 double hellp = massiv[firstotr];
                 massiv[firstotr] = massiv[lastpol];
                 massiv[lastpol] = hellp;
-                Console.WriteLine("Поменяны местами первый отрицательный и последний положительный элементы: "+string.Join("; ", massiv));
+                Console.WriteLine("Поменяны местами первый отрицательный и последний положительный элементы: " + string.Join("; ", massiv));
+            }
+            void n6()
+            {
+                Console.Write("Введите длину массива: ");
+                byte outa = 0, a = 1;
+                while (outa == 0)
+                {
+                    if (!byte.TryParse(Console.ReadLine(), out a))
+                        Console.Write("оШИБКА, введите длину массива еще раз: ");
+                    else if (a <= 0)
+                        Console.Write("Длина массива не может быть неположительной\nВведите длину массива еще раз ");
+                    else if (a < 3)
+                        Console.Write("При такой длине массива невозможно удалить 3-й элемент\nВведите длину массива еще раз ");
+                    else
+                        outa++;
+                }
+                double[] massiv = new double[a];
+                Random random = new Random();
+                for (int i = 0; i < a; i++)
+                {
+                    massiv[i] = Math.Round(random.NextDouble() * 101 - 50, 3);
+                }
+                Console.WriteLine("Исходный массив: " + String.Join("; ", massiv));
+                //=====================================
+                const int tri = 3;
+                double[] massiv1 = new double[a - tri + 1];
+                Array.Copy(massiv, tri, massiv1, 0, a - tri);
+                Array.Copy(massiv1, 0, massiv, tri - 1, massiv1.Length);
+                Console.WriteLine("а) исключен 3-й элемент: " + String.Join("; ", massiv));
+                //=======================================
+                int k;
+                vvodk();
+                void vvodk()
+                {
+                    bool outk;
+                    k = 0;
+                    outk = true;
+                    Console.Write("Введите k ");
+                    while (outk)
+                    {
+                        if (!int.TryParse(Console.ReadLine(), out k))
+                            Console.Write("Ошибка! Введите k еще раз ");
+                        else if (k <= 0 || k > a)
+                            Console.Write($"k не может быть неположительным и больше длины массива ({a})\nВведите k еще раз ");
+                        else
+                            outk = false;
+                    }
+                }
+                double[] massiv2 = new double[a - k + 1];
+                Array.Copy(massiv, k, massiv2, 0, a - k);
+                Array.Copy(massiv2, 0, massiv, k - 1, massiv2.Length);
+                Console.WriteLine($"б) исключен {k}-й элемент: " + String.Join("; ", massiv));
+            }
+            void n7()
+            {
+                const int a = 20;
+                double[] massiv = new double[a];
+                Random random = new Random();
+                for (int i = 0; i < a; i++)
+                {
+                    massiv[i] = Math.Round(random.NextDouble() * 101, 3);
+                }
+                Console.WriteLine($"Исходная информация о стоимости {a} товаров: " + String.Join("; ", massiv));
+                //=============================
+                int n;
+                vvodn();
+                void vvodn()
+                {
+                    bool outn;
+                    n = 0;
+                    outn = true;
+                    Console.Write("Введите n ");
+                    while (outn)
+                    {
+                        if (!int.TryParse(Console.ReadLine(), out n))
+                            Console.Write("Ошибка! Введите n еще раз ");
+                        else if (n <= 0 || n > a)
+                            Console.Write($"n не может быть неположительным и больше длины массива ({a})\nВведите n еще раз ");
+                        else
+                            outn = false;
+                    }
+                }
+                double[] massiv2 = new double[a - n + 1];
+                Array.Copy(massiv, n, massiv2, 0, a - n);
+                Array.Copy(massiv2, 0, massiv, n - 1, massiv2.Length);
+                Console.WriteLine($"Информация о стоимости остальных товаров: " + String.Join("; ", massiv));
+            }
+            void n8()
+            {
+                Console.Write("Введите кол-во элементов массива ");
+                int kolvoElenents = 0; bool outkolvoElements = true;
+                while (outkolvoElements)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvoElenents))
+                        Console.Write("Ошибка! Введите кол-во элементов массива еще раз ");
+                    else if (kolvoElenents <= 0)
+                        Console.Write("Кол-во элементов массива не может быть неположительным! Введите кол-во элементов массива еще раз ");
+                    else
+                        outkolvoElements = false;
+                }
+                //Console.WriteLine("Длин массива: " + kolvoElenents);
+                double[] massiv = new double[kolvoElenents];
+                Random random = new Random();
+                for (int i = 0; i < kolvoElenents; i++)
+                {
+                    massiv[i] = Math.Round(random.NextDouble() * 101 - 50, 3); //условие на различность прописать надо будет
+                }
+                Console.WriteLine("Первоначальный массив: " + string.Join("; ", massiv));
+                //===============================
+                {
+                    int n = Array.IndexOf(massiv, massiv.Max()) + 1;
+                    double[] massiv2 = new double[kolvoElenents - n + 1];
+                    Array.Copy(massiv, n, massiv2, 0, kolvoElenents - n);
+                    Array.Copy(massiv2, 0, massiv, n - 1, massiv2.Length);
+                    Console.WriteLine($"a) Удален макс элемент: " + String.Join("; ", massiv));
+                }
+                //==========================================
+                {
+                    int n = Array.IndexOf(massiv, massiv.Min()) + 1;
+                    double[] massiv2 = new double[kolvoElenents - n + 1];
+                    Array.Copy(massiv, n, massiv2, 0, kolvoElenents - n);
+                    Array.Copy(massiv2, 0, massiv, n - 1, massiv2.Length);
+                    Console.WriteLine($"б) Удален мин элемент: " + String.Join("; ", massiv));
+                }
+            }
+            void n9()
+            {
+                const int a = 25;
+                double[] massiv = new double[a];
+                Random random = new Random();
+                for (int i = 0; i < a; i++)
+                {
+                    massiv[i] = Math.Round(random.NextDouble() *141 +60, 3);
+                }
+                Array.Sort(massiv);
+                Console.WriteLine($"Исходная информация о росте {a} учеников: " + String.Join("; ", massiv));
+                //===========================
+                {
+                    Console.Write("Введите порядковый номер выбывшего ученика ");
+                    byte nom = 0; bool nomout = true;
+                    while (nomout)
+                    {
+                        if (!byte.TryParse(Console.ReadLine(), out nom))
+                            Console.Write("Ошибка! Введите порядковый номер выбывшего ученика еще раз ");
+                        else if (nom <= 0 || nom > a)
+                            Console.Write($"Порядковый номер ученика не может быть неположительным и больше {a}. Введите порядковый номер ученика еще раз ");
+                        else
+                            nomout = false;
+                    }
+                    var massiv1 = Array.FindAll(massiv, h => (Array.IndexOf(massiv, h)) != nom-1);
+                    Console.WriteLine($"а) Информация о всех учениках, без учета выбывшего: " + string.Join("; ", massiv1));
+                }
+                //========================================
+                {
+                    Console.Write("Введитерост выбывшего ученика ");
+                    double nom = 0; bool nomout = true;
+                    while (nomout)
+                    {
+                        if (!double.TryParse(Console.ReadLine(), out nom))
+                            Console.Write("Ошибка! Введите рост выбывшего ученика еще раз ");
+                        else if (nom <= 0 || nom > a)
+                            Console.Write($"Такого роста нет в списке. Введите рост ученика еще раз ");
+                        else
+                            nomout = false;
+                    }
+                    massiv = Array.FindAll(massiv, h => h != nom);
+                    Console.WriteLine($"б) Информация о всех учениках, без учета выбывшего: " + string.Join("; ", massiv));
+                }
+            }
+            void n10()
+            {
+                Console.Write("Введите кол-во элементов массива ");
+                int kolvoelements = 0; bool outkolvoelements = true;
+                while (outkolvoelements)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out kolvoelements))
+                        Console.Write("Ошибка! Введите кол-во элементов массива еще раз ");
+                    else if (kolvoelements <= 0)
+                        Console.Write("Кол-во элементов массива не может быть неположительным! Введите кол-во элементов массива еще раз ");
+                    else
+                        outkolvoelements = false;
+                }
+                Random random = new Random();
+                double[] massiv = new double[kolvoelements];
+                for (int i = 0; i < kolvoelements; i++)
+                {
+                    massiv[i] = Math.Round(random.NextDouble() * 201 - 100, 3);
+                }
+                Console.WriteLine("Первоначальный массив: "+string.Join("; ", massiv));
+                //===============================
+                {
+                    if (massiv.Min() < 0)
+                    {
+                        massiv = Array.FindAll(massiv, g => g != Array.Find(massiv, k => k < 0));
+                        Console.WriteLine("Массив без первого отрицательного элемента: " + string.Join("; ",massiv));
+                    }
+                    else
+                        Console.WriteLine("В массиве нет отрицательных элементов");
+                }
+                //=====================================
+                {
+                    if (massiv.Max() > 0)
+                    {
+                        massiv = Array.FindAll(massiv, g => g != Array.Find(massiv, k => k > 0));
+                        Console.WriteLine("Массив без первого положительного элемента: " + string.Join("; ", massiv));
+                    }
+                    else
+                        Console.WriteLine("В массиве нет положительных элементов");
+                }
             }
             //Изменение_исходного_массива.Изменение_исходного_массива ы = new Изменение_исходного_массива.Изменение_исходного_массива(); ы.Номера();
             Console.Write($"Для завершения программы нажмите Enter");
