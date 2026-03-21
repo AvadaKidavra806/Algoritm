@@ -1,0 +1,16 @@
+C:\Users\Кирилл\Desktop\Черновик 1\bin\Debug\Черновик 1.exe.config
+C:\Users\Кирилл\Desktop\Черновик 1\bin\Debug\Черновик 1.exe
+C:\Users\Кирилл\Desktop\Черновик 1\bin\Debug\Черновик 1.pdb
+C:\Users\Кирилл\Desktop\Черновик 1\obj\Debug\Черновик 1.csproj.AssemblyReference.cache
+C:\Users\Кирилл\Desktop\Черновик 1\obj\Debug\Черновик 1.csproj.CoreCompileInputs.cache
+C:\Users\Кирилл\Desktop\Черновик 1\obj\Debug\Черновик 1.exe
+C:\Users\Кирилл\Desktop\Черновик 1\obj\Debug\Черновик 1.pdb
+C:\Users\Кирилл\Desktop\Черновик 1\obj\Debug\Черновик 1.exe.config
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.csproj.AssemblyReference.cache
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.csproj.CoreCompileInputs.cache
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.exe
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.pdb
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\bin\Debug\Черновик 1.exe.config
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\bin\Debug\Черновик 1.exe
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\bin\Debug\Черновик 1.pdb
+C:\Users\Кирилл\Documents\Типа рабочий стол\Черновик 1\obj\Debug\Черновик 1.exe.config
