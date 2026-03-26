@@ -109,8 +109,7 @@ namespace MatricaDiagonali
                 }
                 Console.WriteLine("Произведение элементов по побочной диагонали: " + proiz);
             }
-            Console.Write("Для завершения программы нажмите Enter");
-            Console.ReadLine();
+            
         }
     }
 }

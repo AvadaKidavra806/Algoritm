@@ -62,8 +62,6 @@ namespace Odnomermassiv
             }
 			//n1();
 			n2();
-			Console.Write("Для завершения программы нажмите Enter");
-			Console.ReadLine();
 		}
 	}//Odnomermassiv.Nap nap = new Odnomermassiv.Nap(); nap.Gha();
 }

@@ -1,32 +1,17 @@
-﻿//using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-//using Код_по_блок_схеме_на_10._02._26;
-//using Расчет_суммы_или_колва_элементов_массива_9_2_26;
 
-namespace массив_на_с_
+namespace Черновик
 {
-    internal class Черновик
+    public class Черновик
     {
-        static void Main()
+        public void Решение()
         {
-            // Program program = new Program(); program.Начало();
-            //Дихотомия.Дихотомия dix = new Дихотомия.Дихотомия(); dix.Решение();
-            //Blockshema blockshema = new Blockshema(); blockshema.Nomera();
-            //Обработка_массива.Обработка_массива МАрк = new Обработка_массива.Обработка_массива(); МАрк.Задание();
-            //Петергоф.Куколка ап = new Петергоф.Куколка(); ап.gd();
-            //Изменение_исходного_массива.Изменение_исходного_массива ы = new Изменение_исходного_массива.Изменение_исходного_массива(); ы.Номера();
-            //ReshenieSin.Sin sin= new ReshenieSin.Sin(); sin.sin();
-            //ReshenieSislosh.Sinslosh sinslosh = new ReshenieSislosh.Sinslosh(); sinslosh.sin();
-            //Dvumerny_massiv.Ghf ghf = new Dvumerny_massiv.Ghf(); ghf.Edf();
-            //MatricaDiagonali.Resheniy resheniy = new MatricaDiagonali.Resheniy(); resheniy.Qwerty();
-            Dvumerny_massiv_obrabotka.Ghf ghf = new Dvumerny_massiv_obrabotka.Ghf(); ghf.Edf();
-            //Odnomermassiv.Nap nap = new Odnomermassiv.Nap(); nap.Gha();
-            void Счетчик_символов_строки ()
+            void Счетчик_символов_строки()
             {
                 string a = Console.ReadLine();
                 Console.WriteLine(a.Length);
@@ -38,7 +23,7 @@ namespace массив_на_с_
                 Console.WriteLine(function);
                 Console.ReadLine();
             }
-            void for_chisl_metod ()
+            void for_chisl_metod()
             {
                 double x = 0, xn;
                 Console.WriteLine("Введите х ");
@@ -47,21 +32,21 @@ namespace массив_на_с_
                 Console.WriteLine($"nx = {xn}");
                 Console.WriteLine("Продолжить? (y/n)");
                 string s = Console.ReadLine();
-                while (s == "y") 
+                while (s == "y")
                 {
                     x = xn;
                     xn = x * ((Math.Pow(x, 4) + 2 * Math.Pow(x, 3) - x - 1) / (4 * Math.Pow(x, 3) + 6 * Math.Pow(x, 2) - 1));
-                    Console.WriteLine($"nx = {xn}"); 
+                    Console.WriteLine($"nx = {xn}");
                     Console.WriteLine("Продолжить? (y/n)");
                     s = Console.ReadLine();
                 }
-                
+
                 //-0,59375
             }
             //for_chisl_metod();
-            /*Console.WriteLine("Это черновик!");
+            Console.WriteLine("Это черновик!");
             Console.Write("Для завершения программы нажмите любую клавишу");
-            Console.ReadKey();*/
+            Console.ReadKey();
             //Console.Write(Console.ReadLine().ToLower());
             //==========
             /*Console.Write("Введите колво элементов массива ");

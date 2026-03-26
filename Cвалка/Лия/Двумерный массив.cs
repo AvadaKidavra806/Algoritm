@@ -1741,8 +1741,6 @@ namespace Dvumerny_massiv
                 else
                     Console.WriteLine($"б) в левом верхнем ({nums[0, 0]}) или левом нижнем ({nums[kolvostrok - 1, 0]}) углах нет числа, оканчивающегося 5");
             }
-            Console.Write("Для завершения программы нажмите Enter");
-            Console.ReadLine();
         }
     }
 }
