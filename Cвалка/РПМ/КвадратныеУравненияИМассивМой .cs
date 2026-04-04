@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 
 namespace классворк_20._01._26__квадратное_уравнение_
 {

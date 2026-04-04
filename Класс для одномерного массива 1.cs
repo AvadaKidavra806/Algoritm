@@ -29,7 +29,7 @@ namespace ClassForMassiv
 						OutKolvoMassivov = false;
 				}
 			}
-			VvodKolvaMassivov();  //KolvoMassivov = 2; //Под конкретную задачу
+			VvodKolvaMassivov();
             OdnomerMassiv [] massivs = new OdnomerMassiv [KolvoMassivov];
             int[] KolvoVsehMassivov = new int[KolvoMassivov];
             for (int i = 0; i < KolvoMassivov; i++)
@@ -39,12 +39,14 @@ namespace ClassForMassiv
 				massivs[i] = massiv;
 				KolvoVsehMassivov[i] = KolvoElementsMassiva;
             }
+			Console.WriteLine("KolvoVsehMassivov.Distinct().Count(): " + string.Join(", ", KolvoVsehMassivov.Distinct()) +
+				" KolvoVsehMassivov.Length: " + string.Join(", ", KolvoVsehMassivov));
 			//пункт 2
 			Console.WriteLine("Пункт 2");
 			Console.WriteLine("Арифметическое действие над массивами:");
 			if (massivs.Length == 1)
 				Console.WriteLine("Пользователем был введен только 1 массив, поэтому невозможно выполнить задание с поэлементным преобразованием массивов и оно было пропущено");
-			else if (KolvoVsehMassivov.Distinct().Count() != KolvoVsehMassivov.Length)
+			else if (KolvoVsehMassivov.Distinct().Count() == KolvoVsehMassivov.Length)
 				Console.WriteLine("Среди введенных массивов нет массивов с одинаковой длиной, поэтому невозможно выполнить поэлементную сумму и разность массивов ");
 			else
 			{
@@ -75,7 +77,6 @@ namespace ClassForMassiv
 					}
 					Console.WriteLine("Номера массивов: " + string.Join(",", ints));
                     //=========================
-                    //ints[0] = 1; ints[1] = 2; //Под конкретную задачу
                     ArifmeticheskieDeystviy(massivs[ints[0] - 1], massivs[ints[1] - 1]);
 					
 				}
@@ -208,14 +209,14 @@ namespace ClassForMassiv
 									if (!ad)
 									{
 										if (i < massiv1.DLINA() - 1)
-											Console.Write(doubles[i] + ", ");
+											Console.Write(doubles[i] + "; ");
 										else
 											Console.Write(doubles[i] + "\n");
 									}
 									else
 									{ 
 										if (i < massiv1.DLINA() - 1)
-											Console.Write("Ошибка! Деление на 0, ");
+											Console.Write("Ошибка! Деление на 0; ");
 										else
 											Console.Write("Ошибка! Деление на 0\n");
 									}
@@ -232,14 +233,14 @@ namespace ClassForMassiv
                                     if (!ad)
                                     {
                                         if (i < massiv1.DLINA() - 1)
-                                            Console.Write(doubles[i] + ", ");
+                                            Console.Write(doubles[i] + "; ");
                                         else
                                             Console.Write(doubles[i] + "\n");
                                     }
                                     else
                                     {
                                         if (i < massiv1.DLINA() - 1)
-                                            Console.Write("Ошибка! Деление на 0, ");
+                                            Console.Write("Ошибка! Деление на 0; ");
                                         else
                                             Console.Write("Ошибка! Деление на 0\n");
                                     }
