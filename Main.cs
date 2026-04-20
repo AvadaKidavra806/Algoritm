@@ -7,8 +7,8 @@ namespace Main
         static void Main()
         {
             //Черновик.Черновик черновик = new Черновик.Черновик();; черновик.Решение();;
-            ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov();; posle.DmumerMassiv();;
-            //Rabota.KvadratMassiv massiv = new Rabota.KvadratMassiv();; massiv.DmumerMassiv();;
+            //ProverkaUslovia.PosleRaschetov posle = new ProverkaUslovia.PosleRaschetov();; posle.DmumerMassiv();;
+            Rabota.KvadratMassiv massiv = new Rabota.KvadratMassiv();; massiv.DmumerMassiv();;
             Console.Write("Для завершения программы нажмите Enter");;
             Console.ReadLine();;
         }

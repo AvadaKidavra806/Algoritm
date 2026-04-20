@@ -32,24 +32,21 @@ namespace Rabota
 				case 8: n8(); break;
 				case 9: n9(); break;
 				case 10: n10(); break;
+				case 11: n11(); break;
+				case 12: n12(); break;
+				case 13: n13(); break;
+				case 14: n14(); break;
+				case 15: n15(); break;
+				case 16: n16(); break;
+				case 17: n17(); break;
 				default:
 					Console.WriteLine("Пока что не готов этот номер");
 					break;
 			}
 			void n1()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+				SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -77,18 +74,8 @@ namespace Rabota
 			}
 			void n2()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -116,18 +103,8 @@ namespace Rabota
 			}
 			void n3()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				int[] glav = new int[Razryad];
 				int[] poboch = new int[Razryad];
 				Random rnd = new Random();
@@ -151,18 +128,8 @@ namespace Rabota
 			}
 			void n4()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				int[] glav = new int[Razryad];
 				int[] poboch = new int[Razryad];
 				Random rnd = new Random();
@@ -186,18 +153,8 @@ namespace Rabota
 			}
 			void n5()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -236,18 +193,8 @@ namespace Rabota
 			}
 			void n6()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -286,18 +233,8 @@ namespace Rabota
 			}
 			void n7()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -324,18 +261,8 @@ namespace Rabota
 			}
 			void n8()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				Console.WriteLine("Двумерный массив: ");
 				for (int i = 0; i < Razryad; i++)
@@ -362,18 +289,8 @@ namespace Rabota
 			}
 			void n9()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				int sumglav = 0;
 				int sumpoboch = 0;
@@ -398,18 +315,8 @@ namespace Rabota
 			}
 			void n10()
 			{
-				Console.Write("Введите разрядность квадратной матрицы: ");
-				int Razryad = 0; bool OutRazryad = true;
-				while (OutRazryad)
-				{
-					if (!int.TryParse(Console.ReadLine(), out Razryad))
-						Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
-					else if (Razryad <= 0)
-						Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
-					else
-						OutRazryad = false;
-				}
-				int[,] massiv = new int[Razryad, Razryad];
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
 				Random rnd = new Random();
 				double sumglav = 0;
 				double sumpoboch = 0;
@@ -430,8 +337,301 @@ namespace Rabota
 				//=======================
 				Console.WriteLine("a)Среднее арифметическое элементов главной диагонали равна: " + sumglav / Razryad);
 				Console.WriteLine("б)Среднее арифметическое элементов побочной диагонали равна: " + sumpoboch / Razryad);
-
 			}
+			void n11()
+			{
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+				//=======================
+				Console.WriteLine("Найти для каждой строки суммму элементов главной и побочной диагоналей");
+				Console.WriteLine("Способ 1 ");
+                Console.WriteLine("№ Строки\tСумма элементов ");
+                int[] chisla = new int[Razryad * 2];
+				for (int i = 0; i < Razryad; i++)
+				{
+					chisla[i] = massiv[i, i];
+					chisla[i + Razryad] = massiv[i, Razryad - i - 1];
+				}
+                for (int i = 0; i < Razryad; i++)
+                {
+                    if (Razryad % 2 == 0)
+                        Console.WriteLine($"{i + 1}\t\t{chisla[i] + chisla[i+Razryad]}");
+                    else
+                    {
+                        if (i != Razryad / 2)
+                            Console.WriteLine($"{i + 1}\t\t{chisla[i] + chisla[i + Razryad]}");
+                        else
+                            Console.WriteLine($"{i + 1}\t\t{chisla[i]}");
+                    }
+                }
+                //==================
+                Console.WriteLine("Способ 2 ");
+				Console.WriteLine("№ Строки\tСумма элементов ");
+				for (int i = 0; i < Razryad; i++)
+				{
+					if (Razryad % 2 == 0)
+						Console.WriteLine($"{i + 1}\t\t{massiv[i, i] + massiv[i, Razryad - 1 - i]}");
+					else
+					{
+						if (i != Razryad / 2)
+							Console.WriteLine($"{i + 1}\t\t{massiv[i, i] + massiv[i, Razryad - 1 - i]}");
+						else
+							Console.WriteLine($"{i + 1}\t\t{massiv[i, i]}");
+                    }
+                }
+            }
+			void n12()
+			{
+				SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //=======================
+                Console.WriteLine("Найти для каждого столбца суммму элементов главной и побочной диагоналей");
+                Console.WriteLine("Способ 1 ");
+                Console.WriteLine("№ Столбца\tСумма элементов ");
+                int[] chisla = new int[Razryad * 2];
+                for (int i = 0; i < Razryad; i++)
+                {
+                    chisla[i] = massiv[i, i];
+                    chisla[i + Razryad] = massiv[Razryad - i - 1, i];
+                }
+                for (int i = 0; i < Razryad; i++)
+                {
+                    if (Razryad % 2 == 0)
+                        Console.WriteLine($"{i + 1}\t\t{chisla[i] + chisla[i + Razryad]}");
+                    else
+                    {
+                        if (i != Razryad / 2)
+                            Console.WriteLine($"{i + 1}\t\t{chisla[i] + chisla[i + Razryad]}");
+                        else
+                            Console.WriteLine($"{i + 1}\t\t{chisla[i]}");
+                    }
+                }
+                //==================
+                Console.WriteLine("Способ 2 ");
+                Console.WriteLine("№ Столбца\tСумма элементов ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    if (Razryad % 2 == 0)
+                        Console.WriteLine($"{i + 1}\t\t{massiv[i, i] + massiv[Razryad - 1 - i, i]}");
+                    else
+                    {
+                        if (i != Razryad / 2)
+                            Console.WriteLine($"{i + 1}\t\t{massiv[i, i] + massiv[Razryad - 1 - i, i]}");
+                        else
+                            Console.WriteLine($"{i + 1}\t\t{massiv[i, i]}");
+                    }
+                }
+            }
+			void n13()
+			{
+				SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+				//=======================
+				Console.WriteLine("Поменять местами два любых элемента главной диагонали ");
+				int FirstElement = ZaprosStroki(1) - 1;
+                int SecondElement = ZaprosStroki(2) - 1;
+				int ZaprosStroki(int da = 1)
+				{
+					Console.Write($"Введите номер сторки {da}-го элемента ");
+					int NomerStroki = 0; bool OutNomerStroki = true;
+					while (OutNomerStroki)
+					{
+						if (!int.TryParse(Console.ReadLine(), out NomerStroki))
+							Console.Write("Ошибка! Введите номер строки еще раз ");
+						else if (NomerStroki <= 0)
+							Console.Write("Номер строки не может быть неположительным. Введите номер строки еще раз ");
+						else if (NomerStroki > Razryad)
+							Console.Write("Номер строки не может быть больше кол-ва строк в массиве. Введите номер строки еще раз ");
+						else
+							OutNomerStroki = false;
+					}
+					return NomerStroki;
+				}
+				(massiv[FirstElement, FirstElement], massiv[SecondElement, SecondElement]) = (massiv[SecondElement, SecondElement], massiv[FirstElement, FirstElement]);
+				Console.WriteLine("Поменяны местами выбранные элементы: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+					{                     
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            void n14()
+            {
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+                //=======================
+                Console.WriteLine("Поменять местами два любых элемента побочной диагонали ");
+                int FE = ZaprosStroki(1) - 1;
+                int SE = ZaprosStroki(2) - 1;
+                int ZaprosStroki(int da = 1)
+                {
+                    Console.Write($"Введите номер сторки {da}-го элемента ");
+                    int NomerStroki = 0; bool OutNomerStroki = true;
+                    while (OutNomerStroki)
+                    {
+                        if (!int.TryParse(Console.ReadLine(), out NomerStroki))
+                            Console.Write("Ошибка! Введите номер строки еще раз ");
+                        else if (NomerStroki <= 0)
+                            Console.Write("Номер строки не может быть неположительным. Введите номер строки еще раз ");
+                        else if (NomerStroki > Razryad)
+                            Console.Write("Номер строки не может быть больше кол-ва строк в массиве. Введите номер строки еще раз ");
+                        else
+                            OutNomerStroki = false;
+                    }
+                    return NomerStroki;
+                }
+				(massiv[FE, Razryad - FE - 1], massiv[SE, Razryad - SE - 1]) = (massiv[SE, Razryad - SE - 1], massiv[FE, Razryad - FE - 1]);
+                Console.WriteLine("Поменяны местами выбранные элементы: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        Console.Write(massiv[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
+			void n15()
+			{
+				SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+				int sumgl = 0;
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+						if(i == j)
+							sumgl += massiv[i, j];
+                    }
+                    Console.WriteLine();
+                }
+				//=======================
+				if (sumgl <= 100)
+					Console.WriteLine($"Верно, сумма главной диагонали матрицы не превышает 100 (sumgl: {sumgl})");
+				else
+					Console.WriteLine($"Не верно, сумма главной диагонали матрицы превышает или равна 100 (sumgl: {sumgl})");
+				
+            }
+            void n16()
+            {
+                SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                int sumpob = 0;
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                        if (i + j == Razryad - 1)
+                            sumpob += massiv[i, j];
+                    }
+                    Console.WriteLine();
+                }
+                //=======================
+                if (sumpob % 10 == 0)
+                    Console.WriteLine($"Верно, сумма побочной диагонали матрицы оканчивается 0 (sumpob: {sumpob})");
+                else
+                    Console.WriteLine($"Не верно, сумма побочной диагонали матрицы не оканчивается 0 (sumpob: {sumpob})");
+
+            }
+			void n17()
+			{
+				SozdanieKvadratnogoMassiva(out int Razryad);
+                int[,] massiv = new int[Razryad, Razryad];
+                Random rnd = new Random();
+                int sumgl = 0;
+                int sumpob = 0;
+                Console.WriteLine("Двумерный массив: ");
+                for (int i = 0; i < Razryad; i++)
+                {
+                    for (int j = 0; j < Razryad; j++)
+                    {
+                        massiv[i, j] = rnd.Next(-10, 10);
+                        Console.Write(massiv[i, j] + "\t");
+                        if (i == j)
+                            sumgl += massiv[i, j];
+                        if (i + j == Razryad - 1)
+                            sumpob += massiv[i, j];
+                    }
+                    Console.WriteLine();
+                }
+				//=======================
+				if (sumgl == sumpob)
+					Console.WriteLine($"Сумма элементов главной диагонали равна сумме элементов побочной диагонали (sumgl: {sumgl}, sumpob: {sumpob})");
+				else if (sumgl > sumpob)
+                    Console.WriteLine($"Сумма элементов главной диагонали больше суммы элементов побочной диагонали (sumgl: {sumgl}, sumpob: {sumpob})");
+				else
+                    Console.WriteLine($"Сумма элементов главной диагонали меньше суммы элементов побочной диагонали (sumgl: {sumgl}, sumpob: {sumpob})");
+            }
+            void SozdanieKvadratnogoMassiva(out int Razryad)
+			{
+                Console.Write("Введите разрядность квадратной матрицы: ");
+                Razryad = 0; bool OutRazryad = true;
+                while (OutRazryad)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out Razryad))
+                        Console.Write("Ошибка! Введите разрядность квадратной матрицы еще раз ");
+                    else if (Razryad <= 0)
+                        Console.Write("Разрядность квадратной матрицы не может быть неположительным. Введите разряд квадратной матрицы еще раз ");
+                    else
+                        OutRazryad = false;
+                }
+            }
+				
 		}
 	}
 }
